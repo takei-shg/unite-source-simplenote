@@ -2,7 +2,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 let s:source = {
-\ 'name' : 'simlpenote',
+\ 'name' : 'simplenote',
 \ 'default_action' : 'edit',
 \ 'description' : 'candidates for simplenote',
 \ }
