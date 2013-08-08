@@ -14,8 +14,8 @@ endfunction
 function! s:source.gather_candidates(args, context)
   let candidate = metarw#sn#complete('', '', '')
   return map(len(candidate) > 0 ? candidate[0] : [], "{
-  \ 'word': v:val, 'abbr': v:val, 'action__path': v:val,
-  \ 'kind': 'command', 'action__command': printf('edit %s\n', v:val),
+  \ 'word': v:val, 'addr': v:val, 'action__path': v:val,
+  \ 'kind': 'command', 'action__command': printf('Edit %s\n', v:val),
   \}")
 endfunction
 
