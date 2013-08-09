@@ -15,12 +15,12 @@ function! s:source.gather_candidates(args, context)
   let candidates = metarw#sn#complete('', '', '')
   return map(len(candidates) > 0 ? candidates[0] : [], "{
   \ 'word': s:create_description(v:val),
-  \ 'kind': 'command', 'action__command': printf('Edit sn:%s\n', candidates.key),
+  \ 'kind': 'command', 'action__command': printf('Edit sn:%s\n', v:val.key),
   \}")
 endfunction
 
 function! s:create_description(candidate)
-  return candidate.modifydate . ':' . candidate.tags . ':' . candidate.title
+  return a:candidate.modifydate . ':' . a:candidate.tags . ':' . a:candidate.title
 endfunction
 
 let &cpo = s:save_cpo
