@@ -35,7 +35,7 @@ endfunction"}}}
 
 function! s:create_description(candidate)"{{{
   return printf(s:word_format,
-  \   strftime('%Y/%m/%d %H:%M', float2nr(a:candidate.modifydate)),
+  \   strftime('%Y/%m/%d %H:%M', float2nr(str2float(a:candidate.modifydate))),
   \   strlen(a:candidate.tags) >= 20 ? a:candidate.tags[0:18] . '~' : a:candidate.tags,
   \   a:candidate.title,
   \ )
