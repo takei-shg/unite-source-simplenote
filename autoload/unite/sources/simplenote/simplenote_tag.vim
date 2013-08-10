@@ -13,11 +13,11 @@ endfunction"}}}
 function! s:source.gather_candidates(args, context)"{{{
   call unite#print_message('[sn/simplenote_tag]' . s:build_title())
   let candidates = metarw#sn#complete('', '', '')
-  return map(len(candidates) > 0 ? candidates[0] : [], '{
-  \ "word": s:create_description(v:val),
-  \ "kind": 'simplenote/edit_tag',
-  \ "action__data": v:val.key,
-  \}')
+  return map(len(candidates) > 0 ? candidates[0] : [], "{
+  \ 'word': s:create_description(v:val),
+  \ 'kind': 'simplenote/edit_tag',
+  \ 'action__data': v:val.key,
+  \}")
 endfunction"}}}
 
 
