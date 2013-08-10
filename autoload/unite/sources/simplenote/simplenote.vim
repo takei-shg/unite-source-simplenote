@@ -14,10 +14,10 @@ endfunction"}}}
 function! s:source.gather_candidates(args, context)"{{{
   call unite#print_message('[sn/simplenote]' . s:build_title())
   let candidates = metarw#sn#complete('', '', '')
-  return map(len(candidates) > 0 ? candidates[0] : [], "{
+  return map(len(candidates) > 0 ? candidates[0] : [], '{
   \ 'word': s:create_description(v:val),
   \ 'kind': 'command', 'action__command': printf('Edit sn:%s\n', v:val.key),
-  \}")
+  \}')
 endfunction"}}}
 
 
