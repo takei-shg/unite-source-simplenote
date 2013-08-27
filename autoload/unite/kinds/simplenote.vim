@@ -1,8 +1,5 @@
-let s:save_cpo = &cpo
-set cpo&vim
-
 function! unite#kinds#simplenote#define()"{{{
-  call s:add_edit_tag_action_on_command_kind()
+"   call s:add_edit_tag_action_on_command_kind()
   let kinds = []
   for command in s:get_commands()
     let kind = call(s:to_define_func(command), [])
@@ -68,7 +65,5 @@ function! unite#kinds#simplenote#__context__()
 endfunction
 "}}}
 
-let &cpo = s:save_cpo
-unlet s:save_cpo
 " __END__
 

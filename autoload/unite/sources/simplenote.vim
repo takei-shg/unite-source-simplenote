@@ -1,6 +1,3 @@
-let s:save_cpo = &cpo
-set cpo&vim
-
 let s:source = {
 \ 'name' : 'simplenote',
 \ 'description' : 'candidates for simplenote',
@@ -61,8 +58,5 @@ function! unite#sources#simplenote#__context__()
   return { 'sid': s:SID, 'scope': s: }
 endfunction
 "}}}
-
-let &cpo = s:save_cpo
-unlet s:save_cpo
 
 " vim: foldmethod=marker

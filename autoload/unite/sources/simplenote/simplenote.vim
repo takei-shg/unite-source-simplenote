@@ -1,6 +1,3 @@
-let s:save_cpo = &cpo
-set cpo&vim
-
 let s:source = {
 \ 'name' : 'sn/simplenote',
 \ 'default_action' : 'edit',
@@ -16,11 +13,14 @@ function! s:source.gather_candidates(args, context)"{{{
   let candidates = metarw#sn#complete('', '', '')
   return map(len(candidates) > 0 ? candidates[0] : [], "{
   \ 'word': s:create_description(v:val),
-  \ 'kind': 'command',
-  \ 'action__command': printf('Edit sn:%s\n', v:val.key),
+  \ 'kind': 'simplenote/edit_note',
+  \ 'action__data': {
+  \   'key' : v:val.key,
+  \   'tags' : v:val.tags,
+  \   'modifydate' : v:val.modifydate
+  \  }
   \}")
 endfunction"}}}
-
 
 " local functions {{{
 let s:word_format = '%-16s %- 20s %s'
@@ -53,6 +53,4 @@ function! unite#sources#simplenote#simplenote#__context__()
 endfunction
 "}}}
 
-let &cpo = s:save_cpo
-unlet s:save_cpo
 
