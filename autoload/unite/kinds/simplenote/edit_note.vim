@@ -93,7 +93,7 @@ endfunction
 let s:SID = s:get_SID()
 delfunction s:get_SID
 
-function! unite#kinds#simplenote#edit_tag#__context__()
+function! unite#kinds#simplenote#edit_note#__context__()
   return { 'sid': s:SID, 'scope': s: }
 endfunction
 "}}}
